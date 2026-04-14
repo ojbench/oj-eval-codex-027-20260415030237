@@ -92,3 +92,10 @@ void EndStatement::execute(VarState&, Program& program) const {
   program.programEnd();
 }
 
+// Indent
+IndentStatement::IndentStatement(std::string source) : Statement(std::move(source)) {}
+void IndentStatement::execute(VarState& state, Program&) const { state.pushScope(); }
+
+// Dedent
+DedentStatement::DedentStatement(std::string source) : Statement(std::move(source)) {}
+void DedentStatement::execute(VarState& state, Program&) const { state.popScope(); }

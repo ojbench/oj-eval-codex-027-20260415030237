@@ -14,7 +14,8 @@ const std::unordered_map<std::string, TokenType> TABLE = {
     {"IF", TokenType::IF},       {"THEN", TokenType::THEN},
     {"RUN", TokenType::RUN},     {"LIST", TokenType::LIST},
     {"CLEAR", TokenType::CLEAR}, {"QUIT", TokenType::QUIT},
-    {"HELP", TokenType::HELP}};
+    {"HELP", TokenType::HELP}, {"INDENT", TokenType::INDENT},
+    {"DEDENT", TokenType::DEDENT}};
 
 TokenStream Lexer::tokenize(const std::string& line) const {
   std::vector<Token> tokens;
@@ -123,4 +124,3 @@ TokenType Lexer::matchKeyword(const std::string& text) noexcept {
   }
   return TokenType::UNKNOWN;
 }
-

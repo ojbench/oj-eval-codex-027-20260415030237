@@ -83,3 +83,14 @@ class EndStatement : public Statement {
   void execute(VarState& state, Program& program) const override;
 };
 
+class IndentStatement : public Statement {
+ public:
+  explicit IndentStatement(std::string source);
+  void execute(VarState& state, Program& program) const override;
+};
+
+class DedentStatement : public Statement {
+ public:
+  explicit DedentStatement(std::string source);
+  void execute(VarState& state, Program& program) const override;
+};

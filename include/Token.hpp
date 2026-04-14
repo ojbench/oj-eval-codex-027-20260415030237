@@ -18,6 +18,8 @@ enum class TokenType {
   CLEAR,
   QUIT,
   HELP,
+  INDENT,
+  DEDENT,
   // Basic lexical units
   IDENTIFIER,
   NUMBER,
@@ -63,4 +65,3 @@ class TokenStream {
   std::vector<Token> tokens_{};
   int cursor_{0};
 };
-

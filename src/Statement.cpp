@@ -38,7 +38,7 @@ InputStatement::InputStatement(std::string source, std::string var)
     : Statement(std::move(source)), var_(std::move(var)) {}
 
 void InputStatement::execute(VarState& state, Program&) const {
-  std::cout << "? " << std::flush;
+  std::cout << " ? " << std::flush;
   long long v;
   if (!(std::cin >> v)) {
     throw BasicError("INVALID NUMBER");
